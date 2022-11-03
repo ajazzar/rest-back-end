@@ -7,7 +7,7 @@ import {
 import { useParams, useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationForm from "./ReservationForm";
-import cooking from "../images/cooking-bg.jpg";
+// import cooking from "../images/cooking-bg.jpg";
 const dayjs = require("dayjs");
 
 export default function NewEditReservation() {
@@ -87,7 +87,7 @@ export default function NewEditReservation() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${cooking})` }}
+      // style={{ backgroundImage: `url(${cooking})` }}
       className="w-full h-full min-h-screen bg-no-repeat bg-cover bg-top"
     >
       {reservationId ? (
