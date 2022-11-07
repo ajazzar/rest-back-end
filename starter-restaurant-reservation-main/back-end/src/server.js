@@ -1,5 +1,4 @@
-const { PORT = 5001 } =
-  "postgres://zqvgpmei:KIdOhA5imYhfpXZQQWOyWlZ7KQ7fI0hD@jelani.db.elephantsql.com/zqvgpmei";
+const { PORT = 5001 } = "https://back-end-two-kohl.vercel.app/";
 
 const app = require("./app");
 const knex = require("./db/connection");
