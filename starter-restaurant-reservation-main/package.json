@@ -47,12 +47,5 @@
   },
   "keywords": [],
   "author": "Thinkful, Inc.",
-  "license": "UNLICENSED",
-  "dependencies": {
-    "dayjs": "^1.11.6"
-  },
-  "devDependencies": {
-    "postcss": "^8.4.18",
-    "tailwindcss": "^3.2.2"
-  }
+  "license": "UNLICENSED"
 }
