@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { useHistory } from "react-router";
-import ErrorAlert from "../layout/ErrorAlert";
+// import ErrorAlert from "../layout/ErrorAlert";
 import { cancelReservation } from "../utils/api";
 import ReservationCard from "./ReservationCard";
 
 export default function Reservations({ reservations }) {
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const history = useHistory();
 
   async function handleCancel(reservationId) {
@@ -18,7 +18,7 @@ export default function Reservations({ reservations }) {
         await cancelReservation(reservationId);
         history.go();
       } catch (error) {
-        setError(error);
+        // setError(error);
       }
     }
   }
