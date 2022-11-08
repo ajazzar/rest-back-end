@@ -24,7 +24,7 @@ export default function Reservations({ reservations }) {
   }
   return (
     <div className="flex flex-col sm:flex-row sm:justify-center flex-wrap">
-      {/* <ErrorAlert error={error} /> */}
+      <ErrorAlert error={error} />
       {reservations.map((reservation) => (
         <div key={reservation.reservation_id}>
           <ReservationCard
