@@ -24,7 +24,7 @@ function Layout() {
   return (
     <div className="relative min-h-screen md:flex">
       {/* mobile menu bar */}
-      
+        <div className="mobile-menu-button top-0 bg-gray-800 w-full z-10 flex justify-between">
         <Link
           className="navbar-brand block p-4 text-2xl text-white font-bold"
           to="/"
