@@ -1,3 +1,7 @@
+
+Raw Blame
+
+ 
 import React from "react";
 import Menu from "./Menu";
 import Routes from "./Routes";
@@ -19,7 +23,9 @@ function handleSidebar() {
 function Layout() {
   return (
     <div className="relative min-h-screen md:flex">
-       <Link
+      {/* mobile menu bar */}
+      
+        <Link
           className="navbar-brand block p-4 text-2xl text-white font-bold"
           to="/"
         >
@@ -41,6 +47,7 @@ function Layout() {
       <div className="flex-1">
         <Routes />
       </div>
+    </div>
   );
 }
 
