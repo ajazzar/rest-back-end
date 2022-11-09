@@ -22,7 +22,7 @@ function Layout() {
   return (
     <div className="relative min-h-screen md:flex">
       {/* mobile menu bar */}
-        <div className="mobile-menu-button top-0 bg-gray-800 w-full z-10 flex justify-between">
+        <div className="mobile-menu-button bg-gray-800 w-full z-10 flex justify-between">
         <Link
           className="navbar-brand block p-4 text-2xl text-black font-bold"
           to="/"
@@ -38,7 +38,7 @@ function Layout() {
         </button>
       </div>
       {/* sidebar */}
-      <div className="sidebar z-10 w-62 bg-black-700 space-y-6 py-7 px-2 md:relative md:translate-x-0 absolute inset-y-0 left-0 transform -translate-x-full transition duration-150 ease-in-out">
+      <div className="sidebar z-10 w-62 bg-black-700 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full transition duration-150 ease-in-out">
         <Menu />
       </div>
       {/* main content */}
