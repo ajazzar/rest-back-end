@@ -53,7 +53,7 @@ export default function Search() {
             required
           />
           <button
-            className="focus:outline-none text-white bg-teal-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg w-20 h-11 rounded-3xl"
+            className="focus:outline-none text-black bg-teal-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg w-20 h-11 rounded-3xl"
             type="submit"
           >
             Find

@@ -53,10 +53,7 @@ export default function Table({ table, index }) {
         <h2>Table Name: {table.table_name}</h2>
         <p>Capacity: {table.capacity}</p>
         <p data-table-id-status={`${table.table_id}`}>
-          Status:{" "}
-          {table.reservation_id
-            ? `Occupied at table with capacity of ${table.capacity}`
-            : "Free"}
+          Status: {table.reservation_id ? "Occupied" : "Free"}
         </p>
         {foundRes && (
           <p>
