@@ -52,7 +52,7 @@ export default function ReservationSeats() {
         <h2 className="font-bold text-center text-teal-700 text-4xl sm:text-5xl mx-2 p-3">
           Seat a Reservation
         </h2>
-        <div className="mx-auto sm:w-8/12 my-6 leading-10 bg-teal-500 text-white text-center drop-shadow-3xl p-4 rounded-3xl">
+        <div className="mx-auto sm:w-8/12 my-6 leading-10 bg-teal-500 text-black text-center drop-shadow-3xl p-4 rounded-3xl">
           <form onSubmit={handleSubmit}>
             <h2 className="text-3xl sm:text-5xl font-bold">
               Table name - Table capacity
