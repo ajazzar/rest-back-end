@@ -14,7 +14,7 @@ function ErrorAlert({ error }) {
     error && (
       <div className="alert alert-danger m-2">Error: {error.message}</div>
     )
-    <\div>
+    </div>
   );
 }
 
