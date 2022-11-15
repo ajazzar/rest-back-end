@@ -29,7 +29,7 @@ export default function NewTable() {
     event.preventDefault();
     const abortController = new AbortController();
     try {
-      await createTable(formData, abortController.signa);
+      await createTable(formData, abortController.signal);
       setFormData({ ...initialFormState });
       history.push("/dashboard");
     } catch (error) {
