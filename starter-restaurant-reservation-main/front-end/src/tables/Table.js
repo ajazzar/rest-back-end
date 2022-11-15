@@ -49,7 +49,7 @@ export default function Table({ table, index }) {
   return (
     <div className="flex flex-row justify-center items-center drop-shadow-3xl mx-auto text-center w-8/12 sm:w-4/12 text-xl font-bold leading-10 bg-teal-500 text-black-100 p-4 rounded-3xl">
       <div key={index}>
-        <ErrorAlert error={error} />
+      
         <h2>Table Name: {table.table_name}</h2>
         <p>Capacity: {table.capacity}</p>
         <p data-table-id-status={`${table.table_id}`}>
