@@ -111,7 +111,7 @@ function Dashboard() {
         className="w-full min-h-screen bg-no-repeat bg-cover bg-top"
         style={{ backgroundImage: `url(${cooking})` }}
       >
-      
+        <ErrorAlert error={error} />
         <Reservations reservations={reservations} />
         <h2 className="font-bold text-center text-teal-700 text-3xl md:text-5xl m-4">
           TABLES
