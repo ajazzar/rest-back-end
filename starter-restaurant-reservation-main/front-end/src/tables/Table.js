@@ -6,7 +6,7 @@ import { deleteTable } from '../utils/api'
 
 export default function Table({ table, index }) {
     const [reservations, setReservations] = useState([])
-    const [error, setError] = useState("")
+    const [error, setError] = useState([])
     const history = useHistory()
 
     useEffect(() => {
