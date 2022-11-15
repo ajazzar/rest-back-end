@@ -12,11 +12,13 @@ export default function ReservationForm({
   return (
     <div className="p-2">
       <form
-        className="mx-auto w-10/12 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-primary text-center p-4 rounded-3xl"
+        className="mx-auto w-12/14 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-primary text-center p-4 rounded-3xl"
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label htmlFor="first_name">First Name</label>
+          <label htmlFor="first_name" class="h5">
+            First Name
+          </label>
           <input
             type="text"
             className="form-control"
@@ -29,7 +31,9 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="last_name">Last Name</label>
+          <label htmlFor="last_name" class="h5">
+            Last Name
+          </label>
           <input
             type="text"
             className="form-control"
@@ -42,7 +46,9 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="mobile_number">Mobile Number</label>
+          <label htmlFor="mobile_number" class="h5">
+            Mobile Number
+          </label>
           <input
             type="tel"
             className="form-control"
@@ -55,7 +61,9 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="reservation_date">Reservation Date</label>
+          <label htmlFor="reservation_date" class="h5">
+            Reservation Date
+          </label>
           <input
             type="date"
             className="form-control"
@@ -68,7 +76,9 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="reservation_time">Reservation Time</label>
+          <label htmlFor="reservation_time" class="h5">
+            Reservation Time
+          </label>
           <input
             type="time"
             className="form-control"
@@ -81,7 +91,9 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="people">Party Size</label>
+          <label htmlFor="people" class="h5">
+            Party Size
+          </label>
           <input
             type="number"
             className="form-control"

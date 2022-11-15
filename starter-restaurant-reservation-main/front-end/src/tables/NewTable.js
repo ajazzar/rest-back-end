@@ -53,7 +53,9 @@ export default function NewTable() {
           onSubmit={handleSubmit}
         >
           <div className="form-group">
-            <label htmlFor="table_name">Table Name</label>
+            <label htmlFor="table_name" class="h5">
+              Table Name
+            </label>
             <input
               type="text"
               className="form-control"
@@ -66,7 +68,9 @@ export default function NewTable() {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="capacity">Capacity</label>
+            <label htmlFor="capacity" class="h5">
+              Capacity
+            </label>
             <input
               type="number"
               className="form-control"
