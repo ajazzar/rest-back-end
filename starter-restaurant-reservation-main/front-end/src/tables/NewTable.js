@@ -49,7 +49,7 @@ export default function NewTable() {
       <ErrorAlert error={error} />
       <div className="p-4">
         <form
-          className="mx-auto sm:w-8/12 text-2xl font-bold leading-10 bg-teal-500 text-black text-center drop-shadow-3xl p-4 rounded-3xl"
+          className="mx-auto sm:w-8/12 text-2xl font-bold leading-10 bg-teal-500 text-primary text-center drop-shadow-3xl p-4 rounded-3xl"
           onSubmit={handleSubmit}
         >
           <div className="form-group">
