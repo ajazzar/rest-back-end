@@ -65,27 +65,4 @@ export default function Table({ table, index }) {
     )
 }
        
-        <h2>Table Name: {table.table_name}</h2>
-        <p>Capacity: {table.capacity}</p>
-        <p data-table-id-status={`${table.table_id}`}>
-          Status: {table.reservation_id ? "Occupied" : "Free"}
-        </p>
-        {foundRes && (
-          <p>
-            {foundRes.first_name} {foundRes.last_name}
-          </p>
-        )}
-        {table.reservation_id && (
-          <button
-            className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 my-2 rounded-full"
-            type="submit"
-            data-table-id-finish={`${table.table_id}`}
-            onClick={() => handleFinish(table.table_id)}
-          >
-            Finish
-          </button>
-        )}
-      </div>
-    </div>
-  );
-}
+     
