@@ -8,19 +8,19 @@ export default function Search() {
   const [reservations, setReservations] = useState([]);
   const [number, setNumber] = useState("");
   const [error, setError] = useState(null);
-  const [found, setfound] = useState(false);
+  const [found, setFound] = useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
     const abortController = new AbortController();
-    setfound(false);
+    setFound(false);
     try {
       const response = await listReservations(
         { mobile_number: number },
         abortController.signal
       );
       setReservations(response);
-      setfound(true);
+      setFound(true);
       setNumber("");
     } catch (error) {
       setError(error);
