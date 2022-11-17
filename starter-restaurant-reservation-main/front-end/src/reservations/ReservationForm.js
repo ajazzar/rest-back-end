@@ -12,7 +12,7 @@ export default function ReservationForm({
   return (
     <div className="p-2">
       <form
-        className="mx-auto w-12/14 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-primary text-center p-4 rounded-3xl"
+        className="mx-auto w-12/14 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 text-primary text-center p-4 rounded-3xl"
         onSubmit={handleSubmit}
       >
         <div className="form-group">
@@ -100,7 +100,7 @@ export default function ReservationForm({
             id="people"
             name="people"
             min={1}
-            placeholder="1"
+            placeholder="Number of People in Party"
             value={formData.people}
             onChange={handleNumber}
             required
