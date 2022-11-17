@@ -20,7 +20,7 @@ function Menu() {
         <ul className="text-light">
           <li className="hover:bg-gray-700 px-2 rounded-xl">
             <Link
-              className="block py-2 transition duration-200"
+              className="no-underline block hover:no-underline py-2 transition duration-200"
               to="/dashboard"
             >
               <span className="oi oi-dashboard" />
@@ -29,7 +29,7 @@ function Menu() {
           </li>
           <li className="hover:bg-gray-700 px-2 rounded-xl">
             <Link
-              class="no-underline block py-2 transition duration-200"
+              class="no-underline block hover:no-underline py-2 transition duration-200"
               to="/search"
             >
               <span className="oi oi-magnifying-glass" />
@@ -38,7 +38,7 @@ function Menu() {
           </li>
           <li className="hover:bg-gray-700 px-2 rounded-xl">
             <Link
-              className="no-underline block hover:text-teal-500 hover:no-underline py-2 transition duration-200"
+              className="no-underline block hover:no-underline py-2 transition duration-200"
               to="/reservations/new"
             >
               <span className="oi oi-plus" />
