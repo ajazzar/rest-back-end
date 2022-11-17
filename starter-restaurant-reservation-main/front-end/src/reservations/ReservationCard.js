@@ -19,7 +19,7 @@ const ReservationCard = ({
   return (
     <>
       {status !== "finished" && status !== "cancelled" && (
-        <div className="drop-shadow-3xl sm:mx-6 my-6 leading-10 bg-teal-500 text-gray-100 font-bold text-xl text-center p-4 rounded-3xl">
+        <div className="drop-shadow-3xl sm:mx-6 my-6 leading-10 text-gray-100 font-bold text-xl text-center p-4 rounded-3xl">
           <p>First Name: {first_name}</p>
           <p>Last Name: {last_name}</p>
           <p>Mobile Number: {mobile_number}</p>
