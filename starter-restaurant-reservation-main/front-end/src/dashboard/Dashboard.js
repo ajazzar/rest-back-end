@@ -109,7 +109,7 @@ function Dashboard() {
       >
         <ErrorAlert error={error} />
         <Reservations reservations={reservations} />
-        <h2 className="font-bold text-center text-teal-700 text-3xl md:text-5xl m-4">
+        <h2 className="font-bold text-center text-3xl md:text-5xl m-4">
           TABLES
         </h2>
         <TableList tables={tables} />
