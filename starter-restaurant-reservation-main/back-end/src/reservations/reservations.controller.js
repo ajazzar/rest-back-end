@@ -86,7 +86,7 @@ async function update(req, res) {
   res.json({ data });
 }
 
-async function destroy(req, res) {
+async function destroy() {
   const { reservation_id } = res.locals.reservation;
   await service.destroy(reservation_id);
   res.sendStatus(204);
