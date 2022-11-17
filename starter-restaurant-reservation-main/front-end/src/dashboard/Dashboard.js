@@ -67,9 +67,9 @@ function Dashboard() {
         className="flex flex-col justify-center lg:flex-row items-center p-4 "
       >
         <label htmlFor="reservation_date">
-          <h1 id="header-text" className="text-4xl sm:text-4xl m-1 font-bold">
+          <h2 id="header-text" className="text-4xl sm:text-4xl m-1 font-bold">
             Current Date:
-          </h1>
+          </h2>
         </label>
         <input
           className="text-2xl md:text-2xl font-bold border-2 border-teal-500 rounded-3xl p-2 m-2 mx-4"
