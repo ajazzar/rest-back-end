@@ -59,12 +59,12 @@ Has the following features:
 
 ## Stack
 
-* React
-* Bootstrap
-* Node
-* Express
-* PostgreSQL
-* Knex.js
+* React - front-end JavaScript library for building user interfaces based on UI components
+* Bootstrap - CSS framework directed at responsive, mobile-first front-end web development
+* Node - back-end JavaScript runtime environment
+* Express - back-end web application framework for building RESTful APIs with Node
+* PostgreSQL - relational database management system emphasizing extensibility and SQL compliance
+* Knex.js - SQL query builder designed to be flexible, portable, and fun to use.
 
 ## Other Tools
 
