@@ -8,13 +8,13 @@ Final Capstone by Aaron Jazzar
   
 ## Documentation of API
 
-| Route        | Methods |           Description   |
-|------------------------------------ | -------------------------------------------------- ------- |
-| /reservations   | GET     |           | returns a list of reservations for current date|
-| /reservations         | POST    |      | creates a new reservation|
+| Route        | Methods                           |Description   |
+|--------------|----------------------------------|------------------------------------------ |
+| /reservations   | GET     |            returns a list of reservations for current date|
+| /reservations         | POST    |       creates a new reservation|
 | /reservations?date=YYYY-MM-DD   | GET     |  returns a list of reservations for a given date|
 | /reservations/:reservation_id | GET     |  returns a reservation matching a given id|
-| /reservations/:reservation_id   | PUT     |     | updates a reservation matching a given id|
+| /reservations/:reservation_id   | PUT       | updates a reservation matching a given id|
 | /reservations/:reservation_id/status | PUT     | updates the status of a reservation for a given id|
 | /tables                 | GET     |      returns a list of tables|
 | /tables                | POST    |          creates a new table|
