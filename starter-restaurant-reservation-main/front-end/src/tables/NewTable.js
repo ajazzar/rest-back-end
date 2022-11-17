@@ -43,13 +43,13 @@ export default function NewTable() {
       style={{ backgroundImage: `url(${tables})` }}
       className="w-full h-screen bg-no-repeat bg-cover bg-top"
     >
-      <h2 className="font-bold text-teal-700 text-center text-3xl sm:text-5xl mx-2 p-3">
+      <h2 className="font-bold text-center text-3xl sm:text-5xl mx-2 p-3">
         Create a Table
       </h2>
       <ErrorAlert error={error} />
       <div className="p-4">
         <form
-          className="mx-auto sm:w-8/12 text-2xl font-bold leading-10 bg-teal-500 text-primary text-center drop-shadow-3xl p-4 rounded-3xl"
+          className="mx-auto sm:w-8/12 text-2xl font-bold leading-10 text-primary text-center drop-shadow-3xl p-4 rounded-3xl"
           onSubmit={handleSubmit}
         >
           <div className="form-group">
@@ -93,7 +93,7 @@ export default function NewTable() {
             <button
               type="button"
               onClick={history.goBack}
-              className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full m-2"
+              className="focus:outline-none bg-gray-100 hover:text-black font-bold py-1 px-3 rounded-full m-2"
             >
               Cancel
             </button>

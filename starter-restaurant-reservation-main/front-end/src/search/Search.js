@@ -39,12 +39,12 @@ export default function Search() {
     >
       <div className="text-center p-4">
         <ErrorAlert error={error} />
-        <h2 className="font-bold text-teal-700 text-3xl sm:text-5xl mx-2 ">
+        <h2 className="font-bold text-3xl sm:text-5xl mx-2 ">
           Search Reservations By Phone Number
         </h2>
         <form onSubmit={handleSubmit}>
           <input
-            className="text-md text-teal-700 border-2 border-teal-500 rounded-3xl text-center mx-2 my-4 w-70 h-12"
+            className="text-md border-2 border-teal-500 rounded-3xl text-center mx-2 my-4 w-70 h-12"
             type="tel"
             name="mobile_number"
             value={number}
@@ -53,7 +53,7 @@ export default function Search() {
             required
           />
           <button
-            className="focus:outline-none text-black bg-teal-500 hover:bg-teal-700 bg-teal-500 font-bold text-lg w-20 h-11 rounded-3xl"
+            className="focus:outline-none text-black font-bold text-lg w-20 h-11 rounded-3xl"
             type="submit"
           >
             Find
