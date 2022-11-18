@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "starter-restaurant-reservation-front-end": "file:.."
+  }
+}
