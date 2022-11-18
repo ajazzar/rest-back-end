@@ -14,7 +14,7 @@ export default function NewEditReservation() {
   const initialFormState = {
     first_name: "",
     last_name: "",
-    mobile_number: "",
+    mobile_number: 0,
     reservation_date: "",
     reservation_time: "",
     people: "",
