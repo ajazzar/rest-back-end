@@ -16,7 +16,7 @@ export default function ReservationForm({
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label htmlFor="first_name" class="h5">
+          <label htmlFor="first_name">
             First Name
           </label>
           <input
@@ -31,7 +31,7 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="last_name" class="h5">
+          <label htmlFor="last_name">
             Last Name
           </label>
           <input
@@ -46,7 +46,7 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="mobile_number" class="h5">
+          <label htmlFor="mobile_number">
             Mobile Number
           </label>
           <input
@@ -61,7 +61,7 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="reservation_date" class="h5">
+          <label htmlFor="reservation_date">
             Reservation Date
           </label>
           <input
@@ -76,7 +76,7 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="reservation_time" class="h5">
+          <label htmlFor="reservation_time">
             Reservation Time
           </label>
           <input
@@ -91,7 +91,7 @@ export default function ReservationForm({
           />
         </div>
         <div className="form-group">
-          <label htmlFor="people" class="h5">
+          <label htmlFor="people">
             Party Size
           </label>
           <input
