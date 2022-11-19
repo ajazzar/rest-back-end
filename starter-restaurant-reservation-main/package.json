@@ -49,6 +49,7 @@
   "author": "Thinkful, Inc.",
   "license": "UNLICENSED",
   "dependencies": {
+    "react-native": "^0.70.6",
     "webpack-dev-server": "^4.11.1"
   }
 }
