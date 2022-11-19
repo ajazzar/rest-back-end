@@ -116,6 +116,18 @@ function hasValidPeople(req, res, next) {
   next();
 }
 
+function hasValidNumber(req, res, next) {
+  const {
+    data: { mobile_number },
+  } = req.body;
+  if (typeof mobile_number !== "number" || mobile_number.length < 9) {
+    return next({
+      status: 400,
+      message: "'mobile_number' must be a number and be greater than 9 digits",
+    });
+  }
+  next();
+}
 function hasValidDate(req, res, next) {
   const {
     data: { reservation_date, reservation_time },
