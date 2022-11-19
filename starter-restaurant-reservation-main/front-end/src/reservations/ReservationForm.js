@@ -44,7 +44,7 @@ export default function ReservationForm({
         <div className="form-group">
           <label htmlFor="mobile_number">Mobile Number</label>
           <input
-            type="number"
+            type="tel"
             className="form-control"
             id="mobile_number"
             name="mobile_number"
