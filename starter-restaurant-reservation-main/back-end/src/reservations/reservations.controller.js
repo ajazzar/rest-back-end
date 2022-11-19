@@ -269,7 +269,7 @@ module.exports = {
     hasValidDate,
     hasValidTime,
     hasValidPeople,
-    hasValidNumber,
+
     asyncErrorBoundary(create),
   ],
   updateStatus: [
@@ -286,7 +286,7 @@ module.exports = {
     hasValidDate,
     hasValidTime,
     hasValidPeople,
-    hasValidNumber,
+
     asyncErrorBoundary(update),
   ],
 };

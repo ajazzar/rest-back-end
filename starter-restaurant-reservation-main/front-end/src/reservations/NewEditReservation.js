@@ -8,7 +8,7 @@ import { useParams, useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationForm from "./ReservationForm";
 import tables from "../images/tables-bg.jpg";
-const dayjs = require("dayjs");
+const dayjs = import("dayjs");
 
 export default function NewEditReservation() {
   const initialFormState = {
