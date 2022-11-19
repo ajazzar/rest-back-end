@@ -49,6 +49,6 @@
   "author": "Thinkful, Inc.",
   "license": "UNLICENSED",
   "dependencies": {
-    "babel-jest": "^29.3.1"
+    "webpack-dev-server": "^4.11.1"
   }
 }
