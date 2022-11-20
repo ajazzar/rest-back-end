@@ -120,10 +120,10 @@ function hasValidNumber(req, res, next) {
   const {
     data: { mobile_number },
   } = req.body;
-  if (typeof mobile_number !== "number" || mobile_number.length < 9) {
+  if (typeof mobile_number !== "tel") {
     return next({
       status: 400,
-      message: "'mobile_number' must be a number and be greater than 9 digits",
+      message: "'mobile_number' must be a telephone number",
     });
   }
   next();

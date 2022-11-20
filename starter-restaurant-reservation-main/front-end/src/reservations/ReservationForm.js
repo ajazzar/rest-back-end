@@ -49,6 +49,7 @@ export default function ReservationForm({
             id="mobile_number"
             name="mobile_number"
             placeholder="123-456-7890"
+            pattern="\d{3}-\d{3}-\d{4}"
             value={formData.mobile_number}
             onChange={handleChange}
             required
