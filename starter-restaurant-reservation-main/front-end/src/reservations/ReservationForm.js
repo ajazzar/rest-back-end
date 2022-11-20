@@ -9,7 +9,8 @@ export default function ReservationForm({
   history,
   id,
 }) {
-  const date = `${formData.reservation_date}`.substring(0, 10);
+  const today = dayjs()
+  const dateToday = `${formData.reservation_date}`.substring(0, 10);
   return (
     <div className="p-2">
       <form
@@ -62,7 +63,7 @@ export default function ReservationForm({
             className="form-control"
             id="reservation_date"
             name="reservation_date"
-            min={dayjs()}
+            min={dateToday}
             pattern="\d{4}-\d{2}-\d{2}"
             value={date}
             onChange={handleChange}
