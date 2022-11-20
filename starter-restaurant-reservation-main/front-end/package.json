@@ -17,6 +17,7 @@
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.6",
     "dayjs-plugin-utc": "^0.1.2",
+    "detect-libc": "^2.0.1",
     "eslintrc": "^1.0.6",
     "libc": "^1.0.0-b0",
     "node": "^19.1.0",
