@@ -50,6 +50,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "babel-jest": "^29.3.1",
+    "craco": "^0.0.3",
     "glib": "^1.3.0",
     "puppeteer": "^19.2.2"
   }
