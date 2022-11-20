@@ -76,7 +76,7 @@ export default function NewEditReservation() {
         setFormData({ ...initialFormState });
       } else {
         await createReservations(formData, controller.signal);
-        history.push(`/dashboard?date=${formData.reservation_date}`);
+        history.push(`/dashboard?date=${dayjs(formData.reservation_date).format("YYYY-MM-DD")}`);
         setFormData({ ...initialFormState });
       }
     } catch (error) {
