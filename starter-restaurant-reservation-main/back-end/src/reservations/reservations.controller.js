@@ -86,7 +86,7 @@ async function update(req, res) {
   res.json({ data });
 }
 
-async function destroy(req, res) {
+async function destroy() {
   const { reservation_id } = res.locals.reservation;
   await service.destroy(reservation_id);
   res.sendStatus(204);
@@ -116,18 +116,6 @@ function hasValidPeople(req, res, next) {
   next();
 }
 
-function hasValidNumber(req, res, next) {
-  const {
-    data: { mobile_number },
-  } = req.body;
-  if (typeof mobile_number !== "tel") {
-    return next({
-      status: 400,
-      message: "'mobile_number' must be a telephone number",
-    });
-  }
-  next();
-}
 function hasValidDate(req, res, next) {
   const {
     data: { reservation_date, reservation_time },
@@ -139,9 +127,9 @@ function hasValidDate(req, res, next) {
 
   const day = dayjs(dateInput).day();
 
-  // console.log(dateInput);
-  // console.log(today);
-  // console.log(day);
+  console.log(dateInput);
+  console.log(today);
+  console.log(day);
 
   const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {
@@ -269,7 +257,6 @@ module.exports = {
     hasValidDate,
     hasValidTime,
     hasValidPeople,
-
     asyncErrorBoundary(create),
   ],
   updateStatus: [
@@ -286,7 +273,6 @@ module.exports = {
     hasValidDate,
     hasValidTime,
     hasValidPeople,
-
     asyncErrorBoundary(update),
   ],
 };
