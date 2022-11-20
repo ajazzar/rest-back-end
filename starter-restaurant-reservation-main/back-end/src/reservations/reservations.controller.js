@@ -268,6 +268,8 @@ module.exports = {
   delete: [asyncErrorBoundary(reservationExists), asyncErrorBoundary(destroy)],
   update: [
     asyncErrorBoundary(reservationExists),
+    hasData,
+    hasOnlyValidProperties,
     hasRequiredProperties,
     checkBookedStatus,
     hasValidDate,
