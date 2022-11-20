@@ -1,5 +1,4 @@
 import React from "react";
-const dayjs = require("dayjs");
 
 export default function ReservationForm({
   handleSubmit,
@@ -9,12 +8,11 @@ export default function ReservationForm({
   history,
   id,
 }) {
-  const today = dayjs()
-  const dateToday = `${formData.reservation_date}`.substring(0, 10);
+  const date = `${formData.reservation_date}`.substring(0, 10);
   return (
     <div className="p-2">
       <form
-        className="mx-auto w-12/14 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 text-primary text-center p-4 rounded-3xl"
+        className="mx-auto w-10/12 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-white text-center p-4 rounded-3xl"
         onSubmit={handleSubmit}
       >
         <div className="form-group">
@@ -46,7 +44,7 @@ export default function ReservationForm({
         <div className="form-group">
           <label htmlFor="mobile_number">Mobile Number</label>
           <input
-            type="number"
+            type="tel"
             className="form-control"
             id="mobile_number"
             name="mobile_number"
@@ -63,7 +61,6 @@ export default function ReservationForm({
             className="form-control"
             id="reservation_date"
             name="reservation_date"
-            min={dateToday}
             pattern="\d{4}-\d{2}-\d{2}"
             value={date}
             onChange={handleChange}
@@ -91,7 +88,7 @@ export default function ReservationForm({
             id="people"
             name="people"
             min={1}
-            placeholder="Number of People in Party"
+            placeholder="1"
             value={formData.people}
             onChange={handleNumber}
             required
