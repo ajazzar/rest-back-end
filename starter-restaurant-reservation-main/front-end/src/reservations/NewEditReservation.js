@@ -7,8 +7,8 @@ import {
 import { useParams, useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationForm from "./ReservationForm";
-import tables from "../images/tables-bg.jpg";
-const dayjs = import("dayjs");
+import cooking from "../images/cooking-bg.jpg";
+const dayjs = require("dayjs");
 
 export default function NewEditReservation() {
   const initialFormState = {
@@ -69,12 +69,14 @@ export default function NewEditReservation() {
       if (reservationId) {
         await updateReservation(formData, controller.signal);
         history.push(
-          `/dashboard?date=${(formData.reservation_date)}`
+          `/dashboard?date=${dayjs(formData.reservation_date).format(
+            "YYYY-MM-DD"
+          )}`
         );
         setFormData({ ...initialFormState });
       } else {
         await createReservations(formData, controller.signal);
-        history.push(`/dashboard?date=${(formData.reservation_date)}`);
+        history.push(`/dashboard?date=${formData.reservation_date}`);
         setFormData({ ...initialFormState });
       }
     } catch (error) {
@@ -85,15 +87,15 @@ export default function NewEditReservation() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${tables})` }}
+      style={{ backgroundImage: `url(${cooking})` }}
       className="w-full h-full min-h-screen bg-no-repeat bg-cover bg-top"
     >
       {reservationId ? (
-        <h2 className="font-bold text-center text-3xl md:text-5xl mx-2 p-3">
+        <h2 className="font-bold text-teal-700 text-center text-3xl md:text-5xl mx-2 p-3">
           Edit Reservation
         </h2>
       ) : (
-        <h2 className="font-bold text-center text-3xl md:text-5xl mx-2 p-3">
+        <h2 className="font-bold text-teal-700 text-center text-3xl md:text-5xl mx-2 p-3">
           Create a Reservation
         </h2>
       )}

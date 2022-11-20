@@ -56,6 +56,7 @@
     "dayjs": "^1.11.6",
     "dayjs-plugin-utc": "^0.1.2",
     "dayjs-timezone-iana-plugin": "^0.1.0",
+    "detect-libc": "^2.0.1",
     "jest-puppeteer": "^6.1.1",
     "node": "^19.1.0",
     "nodejs": "^0.0.0",
