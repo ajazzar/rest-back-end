@@ -44,12 +44,11 @@ export default function ReservationForm({
         <div className="form-group">
           <label htmlFor="mobile_number">Mobile Number</label>
           <input
-            type="tel"
+            type="number"
             className="form-control"
             id="mobile_number"
             name="mobile_number"
             placeholder="123-456-7890"
-            pattern="\d{3}-\d{3}-\d{4}"
             value={formData.mobile_number}
             onChange={handleChange}
             required
