@@ -11,6 +11,7 @@ export default function ReservationForm({
   const now = new Date();
   const minDate = now.toISOString().substring(0, 10);
   const date = `${formData.reservation_date}`.substring(0, 10);
+  const date2
   if(date > minDate){const date2=date return date2}
 return (
     <div className="p-2">
