@@ -9,6 +9,7 @@ export default function ReservationForm({
   id,
 }) {
   const date = `${formData.reservation_date}`.substring(0, 10);
+
   return (
     <div className="p-2">
       <form
@@ -48,6 +49,7 @@ export default function ReservationForm({
             className="form-control"
             id="mobile_number"
             name="mobile_number"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             placeholder="123-456-7890"
             value={formData.mobile_number}
             onChange={handleChange}
@@ -61,8 +63,8 @@ export default function ReservationForm({
             className="form-control"
             id="reservation_date"
             name="reservation_date"
-            pattern="\d{4}-\d{2}-\d{2}"
             value={date}
+            min={new Date().toISOString().split("T")[0]}
             onChange={handleChange}
             required
           />
@@ -76,6 +78,7 @@ export default function ReservationForm({
             name="reservation_time"
             pattern="[0-9]{2}:[0-9]{2}"
             value={formData.reservation_time}
+            min={new Date().toISOString().split("T")[1]}
             onChange={handleChange}
             required
           />
