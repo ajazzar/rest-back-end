@@ -8,11 +8,9 @@ export default function ReservationForm({
   history,
   id,
 }) {
-  const now = new Date();
-  const minDate = now.toISOString().substring(0, 10);
+ 
   const date = `${formData.reservation_date}`.substring(0, 10);
-  const date2
-  if(date > minDate){const date2=date return date2}
+  
 return (
     <div className="p-2">
       <form
@@ -66,7 +64,7 @@ return (
             id="reservation_date"
             name="reservation_date"
             pattern="\d{4}-\d{2}-\d{2}"
-            value={date2}
+            value={date}
             onChange={handleChange}
             required
           />
