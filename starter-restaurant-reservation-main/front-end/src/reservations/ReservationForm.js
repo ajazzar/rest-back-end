@@ -45,7 +45,7 @@ export default function ReservationForm({
         <div className="form-group">
           <label htmlFor="mobile_number">Mobile Number</label>
           <input
-            type="tel"
+            type="number"
             className="form-control"
             id="mobile_number"
             name="mobile_number"
@@ -63,7 +63,7 @@ export default function ReservationForm({
             id="reservation_date"
             name="reservation_date"
             value={date}
-            minDate={new Date().toISOString().split("T")[0]}
+            // min={new Date().toISOString().split("T")[0]}
             onChange={handleChange}
             required
           />
@@ -77,7 +77,6 @@ export default function ReservationForm({
             name="reservation_time"
             pattern="[0-9]{2}:[0-9]{2}"
             value={formData.reservation_time}
-            minTime={new Date().toISOString().split("T")[1]}
             onChange={handleChange}
             required
           />
