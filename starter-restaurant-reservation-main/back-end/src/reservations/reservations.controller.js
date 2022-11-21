@@ -123,13 +123,13 @@ function hasValidDate(req, res, next) {
   const trimmedDate = reservation_date.substring(0, 10);
   const dateInput = dayjs(trimmedDate + " " + reservation_time); // UTC
 
-  // const today = dayjs();
-  const todayDate = new Date().toISOString().split("T")[0];
+  const date = new Date().toISOString().split("T")[0];
+  const today = dayjs(date);
   const day = dayjs(dateInput).day();
 
   // console.log(dateInput);
   // console.log(today);
-  // console.log("---", todayDate, trimmedDate);
+  // console.log(day);
 
   const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {
@@ -153,7 +153,7 @@ function hasValidDate(req, res, next) {
   if (res.locals.reservation) {
     return next();
   }
-  if (reservation_date < todayDate) {
+  if (dateInput < today) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
@@ -167,7 +167,6 @@ function hasValidTime(req, res, next) {
     data: { reservation_time },
   } = req.body;
   const timeFormat = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/;
-  const todayTime = new Date().toISOString().split("T")[1];
   if (!reservation_time) {
     return next({
       status: 400,
@@ -192,15 +191,8 @@ function hasValidTime(req, res, next) {
       message: `reservation_time can't be after 9:30 PM`,
     });
   }
-  if (reservation_time < todayTime) {
-    return next({
-      status: 400,
-      message: `Reservations can't be in the past.`,
-    });
-  }
   next();
 }
-
 
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
