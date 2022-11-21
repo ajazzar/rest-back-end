@@ -64,7 +64,7 @@ export default function ReservationForm({
             id="reservation_date"
             name="reservation_date"
             value={date}
-            min={new Date().toISOString().split("T")[0]}
+            minDate={new Date().toISOString().split("T")[0]}
             onChange={handleChange}
             required
           />
@@ -78,7 +78,7 @@ export default function ReservationForm({
             name="reservation_time"
             pattern="[0-9]{2}:[0-9]{2}"
             value={formData.reservation_time}
-            min={new Date().toISOString().split("T")[1]}
+            minTime={new Date().toISOString().split("T")[1]}
             onChange={handleChange}
             required
           />
