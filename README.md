@@ -21,6 +21,13 @@ Final Capstone by Aaron Jazzar
 | /tables/:table_id/seat    | PUT     |      moves reservation to a table for a given id|
 | /tables/:table_id/seat  | DELETE  |  remove a reservation from a table for a given id|
 
+## Tests
+
+![front-end tests](/images/front-end.png)
+Type into the terminal "npm test" after you go to the "front-end" folder.
+![back-end tests](/images/back-end.png)
+Type into the terminal "npm test" after you go to the "back-end" folder.
+
 ## Dashboard
 
 ![top of dashboard](/images/Dashboard1.png)

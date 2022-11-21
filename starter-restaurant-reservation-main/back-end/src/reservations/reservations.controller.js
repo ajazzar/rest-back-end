@@ -201,16 +201,17 @@ function hasValidTime(req, res, next) {
   next();
 }
 
-// function hasValidPhone(req, res, next) {
-//   const { mobile_number } = req.body.data;
-//   if (mobile_number !== "tel") {
-//     return next({
-//       status: 400,
-//       message: "'mobile_number' must be a telephone number",
-//     });
-//   }
-//   next();
-// }
+function hasValidPhone(req, res, next) {
+  const { mobile_number } = req.body.data;
+  const phoneFormat = /\d\d\d\d\d\d\d\d\d\d/;
+  if (!mobile_number.match(phoneFormat)) {
+    return next({
+      status: 400,
+      message: `mobile_number is invalid`,
+    });
+  }
+  next();
+}
 
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
@@ -291,6 +292,7 @@ module.exports = {
     hasValidDate,
     hasValidTime,
     hasValidPeople,
+    hasValidPhone,
     asyncErrorBoundary(update),
   ],
 };
