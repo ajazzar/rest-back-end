@@ -8,10 +8,11 @@ export default function ReservationForm({
   history,
   id,
 }) {
-  var now = new Date();
-  var minDate = now.toISOString().substring(0, 10);
-  var date = `${formData.reservation_date}`.substring(0, 10);
-  return (
+  const now = new Date();
+  const minDate = now.toISOString().substring(0, 10);
+  const date = `${formData.reservation_date}`.substring(0, 10);
+  if(date > minDate){const date2=date return date2}
+return (
     <div className="p-2">
       <form
         className="mx-auto w-10/12 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-white text-center p-4 rounded-3xl"
@@ -64,8 +65,7 @@ export default function ReservationForm({
             id="reservation_date"
             name="reservation_date"
             pattern="\d{4}-\d{2}-\d{2}"
-            min={minDate}
-            value={date}
+            value={date2}
             onChange={handleChange}
             required
           />
