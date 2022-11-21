@@ -65,7 +65,6 @@ async function read(req, res) {
 async function create(req, res) {
   let data = await service.create(req.body.data);
 
-  console.log(data);
   res.status(201).json({ data });
 }
 
@@ -126,10 +125,6 @@ function hasValidDate(req, res, next) {
   const today = dayjs();
 
   const day = dayjs(dateInput).day();
-
-  console.log(dateInput);
-  console.log(today);
-  console.log(day);
 
   const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {

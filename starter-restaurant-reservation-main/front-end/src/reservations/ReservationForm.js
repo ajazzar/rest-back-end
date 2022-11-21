@@ -8,10 +8,8 @@ export default function ReservationForm({
   history,
   id,
 }) {
- 
   const date = `${formData.reservation_date}`.substring(0, 10);
-  
-return (
+  return (
     <div className="p-2">
       <form
         className="mx-auto w-10/12 sm:w-8/12 drop-shadow-3xl text-xl md:text-2xl font-bold leading-10 bg-teal-500 text-white text-center p-4 rounded-3xl"
