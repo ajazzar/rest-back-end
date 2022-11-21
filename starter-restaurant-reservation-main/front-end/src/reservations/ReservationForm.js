@@ -50,6 +50,7 @@ export default function ReservationForm({
             name="mobile_number"
             placeholder="123-456-7890"
             value={formData.mobile_number}
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             onChange={handleChange}
             required
           />
@@ -63,6 +64,7 @@ export default function ReservationForm({
             name="reservation_date"
             pattern="\d{4}-\d{2}-\d{2}"
             value={date}
+            min={new Date().toISOString().split("T")[0]}
             onChange={handleChange}
             required
           />
@@ -76,6 +78,7 @@ export default function ReservationForm({
             name="reservation_time"
             pattern="[0-9]{2}:[0-9]{2}"
             value={formData.reservation_time}
+            min={new Date().toISOString().split("T")[1]}
             onChange={handleChange}
             required
           />

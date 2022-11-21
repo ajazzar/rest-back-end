@@ -24,9 +24,9 @@ Final Capstone by Aaron Jazzar
 ## Tests
 
 ![front-end tests](/images/front-end.png)
-Type into the terminal "npm test" after you go to the "front-end" folder.
+Type into the terminal "npm test" or "npm run test:{user story number}" after you are in the "front-end" folder.
 ![back-end tests](/images/back-end.png)
-Type into the terminal "npm test" after you go to the "back-end" folder.
+Type into the terminal "npm test" after you are in the "back-end" folder.
 
 ## Dashboard
 
