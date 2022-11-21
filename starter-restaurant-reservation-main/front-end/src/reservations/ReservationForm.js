@@ -50,7 +50,7 @@ export default function ReservationForm({
             name="mobile_number"
             placeholder="123-456-7890"
             value={formData.mobile_number}
-            onChange={handleNumber}
+            onChange={handleChange}
             required
           />
         </div>
