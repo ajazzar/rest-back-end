@@ -64,6 +64,7 @@ export default function ReservationForm({
             id="reservation_date"
             name="reservation_date"
             value={date}
+            min={new Date().toISOString().split("T")[0]}
             onChange={handleChange}
             required
           />
