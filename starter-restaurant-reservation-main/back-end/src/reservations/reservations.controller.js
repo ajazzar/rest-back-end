@@ -133,7 +133,7 @@ function hasValidDate(req, res, next) {
   const date3 = date1.diff(date2); //
   const day = dayjs(dateInput).day();
 
-  console.log("----------", date3);
+  console.log("----------", date1, date2, date3);
 
   const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {
@@ -157,7 +157,7 @@ function hasValidDate(req, res, next) {
   if (res.locals.reservation) {
     return next();
   }
-  if (date3 < 0) {
+  if (date3 > 0) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
