@@ -195,23 +195,12 @@ function hasValidTime(req, res, next) {
   if (reservation_time < todayTime) {
     return next({
       status: 400,
-      message: `Reservations can't be in the past. Please pick a future date.`,
+      message: `Reservations can't be in the past.`,
     });
   }
   next();
 }
 
-function hasValidPhone(req, res, next) {
-  const { mobile_number } = req.body.data;
-  const phoneFormat = /\d\d\d\d\d\d\d\d\d\d/;
-  if (!mobile_number.match(phoneFormat)) {
-    return next({
-      status: 400,
-      message: `mobile_number is invalid`,
-    });
-  }
-  next();
-}
 
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
@@ -292,7 +281,6 @@ module.exports = {
     hasValidDate,
     hasValidTime,
     hasValidPeople,
-    hasValidPhone,
     asyncErrorBoundary(update),
   ],
 };
