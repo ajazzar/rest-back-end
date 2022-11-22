@@ -194,6 +194,19 @@ function hasValidTime(req, res, next) {
   next();
 }
 
+function hasValidPhone(req, res, next) {
+  const {
+    data: { mobile_phone },
+  } = req.body;
+  const phoneFormat = /\d\d\d-\d\d\d-\d\d\d\d/;
+  
+  if (!mobile_phone.match(phoneFormat)) {
+    return next({
+      status: 400,
+      message: `mobile_phone is invalid`,
+    });
+    next();
+  }
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
   const statuses = ["booked", "seated", "finished", "cancelled"];
@@ -256,6 +269,7 @@ module.exports = {
     checkBookedStatus,
     hasValidDate,
     hasValidTime,
+    hasValidPhone,
     hasValidPeople,
     asyncErrorBoundary(create),
   ],
@@ -272,6 +286,7 @@ module.exports = {
     checkBookedStatus,
     hasValidDate,
     hasValidTime,
+    hasValidPhone,
     hasValidPeople,
     asyncErrorBoundary(update),
   ],
