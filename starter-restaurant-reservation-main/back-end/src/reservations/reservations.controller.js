@@ -124,14 +124,14 @@ function hasValidDate(req, res, next) {
   const dateInput = dayjs(trimmedDate + " " + reservation_time); // UTC
 
   //const date = new Date().toISOString();
-  const today = dayjs({})
+  const today = dayjs({});
   const day = dayjs(dateInput).day();
 
   // console.log(dateInput);
   // console.log(today);
   // console.log(day);
 
-  const dateFormat = ^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$;
+  const dateFormat = "^[0-3]?[0-9].[0-3]?[0-9].(?:[0-9]{2})?[0-9]{2}$";
   if (!reservation_date) {
     return next({
       status: 400,
@@ -198,7 +198,7 @@ function hasValidPhone(req, res, next) {
   const {
     data: { mobile_phone },
   } = req.body;
-  const phoneFormat = ^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+  const phoneFormat = "^(+d{1,2}s)?(?d{3})?[s.-]d{3}[s.-]d{4}$";
   if (!mobile_phone) {
     return next({
       status: 400,
@@ -210,8 +210,9 @@ function hasValidPhone(req, res, next) {
       status: 400,
       message: `mobile_phone is invalid`,
     });
-    next();
   }
+  next();
+}
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
   const statuses = ["booked", "seated", "finished", "cancelled"];
