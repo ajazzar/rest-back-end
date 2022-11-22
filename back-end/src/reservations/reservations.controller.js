@@ -1,7 +1,6 @@
 const service = require("./reservations.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 const hasProperties = require("../errors/hasProperties");
-
 const hasRequiredProperties = hasProperties(
   "first_name",
   "last_name",
@@ -66,7 +65,6 @@ async function read(req, res) {
 async function create(req, res) {
   let data = await service.create(req.body.data);
 
-  console.log(data);
   res.status(201).json({ data });
 }
 
@@ -87,7 +85,7 @@ async function update(req, res) {
   res.json({ data });
 }
 
-async function destroy() {
+async function destroy(req, res, next) {
   const { reservation_id } = res.locals.reservation;
   await service.destroy(reservation_id);
   res.sendStatus(204);
@@ -124,17 +122,9 @@ function hasValidDate(req, res, next) {
   const trimmedDate = reservation_date.substring(0, 10);
   const dateInput = dayjs(trimmedDate + " " + reservation_time); // UTC
 
+  const today = dayjs();
+
   const day = dayjs(dateInput).day();
-  let date1 = new Date(reservation_date).getTime();
-
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, "0");
-  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
-  var yyyy = today.getFullYear();
-
-  today = yyyy + "/" + mm + "/" + dd;
-  const x = new Date(trimmedDate);
-  const y = new Date(today);
 
   const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {
@@ -158,15 +148,13 @@ function hasValidDate(req, res, next) {
   if (res.locals.reservation) {
     return next();
   }
-  if (x < y) {
+  if (dateInput < today) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
     });
   }
-  if (x > y) {
-    next();
-  }
+  next();
 }
 
 function hasValidTime(req, res, next) {
@@ -201,25 +189,6 @@ function hasValidTime(req, res, next) {
   next();
 }
 
-function hasValidPhone(req, res, next) {
-  const {
-    data: { mobile_number },
-  } = req.body;
-  const phoneFormat = /\d\d\d-\d\d\d-\d\d\d\d/;
-  if (!mobile_number) {
-    return next({
-      status: 400,
-      message: `mobile_number is empty`,
-    });
-  }
-  if (!mobile_number.match(phoneFormat)) {
-    return next({
-      status: 400,
-      message: `mobile_number is invalid`,
-    });
-  }
-  next();
-}
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
   const statuses = ["booked", "seated", "finished", "cancelled"];
@@ -282,7 +251,6 @@ module.exports = {
     checkBookedStatus,
     hasValidDate,
     hasValidTime,
-    hasValidPhone,
     hasValidPeople,
     asyncErrorBoundary(create),
   ],

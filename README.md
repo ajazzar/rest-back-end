@@ -24,9 +24,8 @@ Final Capstone by Aaron Jazzar
 ## Tests
 
 ![front-end tests](/images/front-end.png)
-Type into the terminal "npm test" or "npm run test:{user story number}" after you are in the "front-end" folder.
+
 ![back-end tests](/images/back-end.png)
-Type into the terminal "npm test" after you are in the "back-end" folder.
 
 ## Dashboard
 
@@ -82,5 +81,5 @@ Has the following features:
 
 1. Go to the project root after downloading the project
 2. Run `npm install` to install dependencies
-3. Start up the front end with `npm run start`
-4. Start up the back end with `npm run start`
+3. Start up the front end with `npm run start:frontend`
+4. Start up the back end with `npm run start:backend`
