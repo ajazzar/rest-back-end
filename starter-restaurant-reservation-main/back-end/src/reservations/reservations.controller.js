@@ -1,6 +1,7 @@
 const service = require("./reservations.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 const hasProperties = require("../errors/hasProperties");
+var isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
 const hasRequiredProperties = hasProperties(
   "first_name",
   "last_name",
@@ -124,14 +125,24 @@ function hasValidDate(req, res, next) {
   const dateInput = dayjs(trimmedDate + " " + reservation_time); // UTC
 
   //const date = new Date().toISOString();
-  const today = dayjs({});
+  const date = new Date();
+
+  let day2 = date.getDate();
+  let month = date.getMonth() + 1;
+  let year = date.getFullYear();
+
+  // This arrangement can be altered based on how we want the date's format to appear.
+  let currentDate = `${month}-${day2}-${year}`;
+  var date1 = new Date(currentDate);
+  var date2 = new Date(`${reservation_date}`);
+  var diffDays = date2.getDate() - date1.getDate();
   const day = dayjs(dateInput).day();
 
   // console.log(dateInput);
   // console.log(today);
   // console.log(day);
 
-  const dateFormat = "^[0-3]?[0-9].[0-3]?[0-9].(?:[0-9]{2})?[0-9]{2}$";
+  const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {
     return next({
       status: 400,
@@ -153,7 +164,7 @@ function hasValidDate(req, res, next) {
   if (res.locals.reservation) {
     return next();
   }
-  if (dateInput < today) {
+  if (diffDays < 0) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
@@ -196,19 +207,19 @@ function hasValidTime(req, res, next) {
 
 function hasValidPhone(req, res, next) {
   const {
-    data: { mobile_phone },
+    data: { mobile_number },
   } = req.body;
-  const phoneFormat = "^(+d{1,2}s)?(?d{3})?[s.-]d{3}[s.-]d{4}$";
-  if (!mobile_phone) {
+  const phoneFormat = /\d\d\d-\d\d\d-\d\d\d\d/;
+  if (!mobile_number) {
     return next({
       status: 400,
-      message: `mobile_phone is empty`,
+      message: `mobile_number is empty`,
     });
   }
-  if (!mobile_phone.match(phoneFormat)) {
+  if (!mobile_number.match(phoneFormat)) {
     return next({
       status: 400,
-      message: `mobile_phone is invalid`,
+      message: `mobile_number is invalid`,
     });
   }
   next();
