@@ -123,8 +123,8 @@ function hasValidDate(req, res, next) {
   const trimmedDate = reservation_date.substring(0, 10);
   const dateInput = dayjs(trimmedDate + " " + reservation_time); // UTC
 
-  const date = new Date().toISOString();
-  const today = dayjs(date);
+  //const date = new Date().toISOString();
+  const today = dayjs()
   const day = dayjs(dateInput).day();
 
   // console.log(dateInput);
@@ -153,7 +153,7 @@ function hasValidDate(req, res, next) {
   if (res.locals.reservation) {
     return next();
   }
-  if (dateInput < date) {
+  if (dateInput < today) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
