@@ -131,7 +131,7 @@ function hasValidDate(req, res, next) {
   // console.log(today);
   // console.log(day);
 
-  const dateFormat = /\d\d\d\d-\d\d-\d\d/;
+  const dateFormat = ^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$;
   if (!reservation_date) {
     return next({
       status: 400,
@@ -198,8 +198,13 @@ function hasValidPhone(req, res, next) {
   const {
     data: { mobile_phone },
   } = req.body;
-  const phoneFormat = /\d\d\d-\d\d\d-\d\d\d\d/;
-  
+  const phoneFormat = ^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+  if (!mobile_phone) {
+    return next({
+      status: 400,
+      message: `mobile_phone is empty`,
+    });
+  }
   if (!mobile_phone.match(phoneFormat)) {
     return next({
       status: 400,
