@@ -124,7 +124,7 @@ function hasValidDate(req, res, next) {
   const dateInput = dayjs(trimmedDate + " " + reservation_time); // UTC
 
   //const date = new Date().toISOString();
-  const today = dayjs()
+  const today = dayjs({})
   const day = dayjs(dateInput).day();
 
   // console.log(dateInput);
