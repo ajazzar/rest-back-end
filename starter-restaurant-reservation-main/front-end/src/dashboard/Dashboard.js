@@ -64,15 +64,18 @@ function Dashboard() {
     <main>
       <div
         id="header"
-        className="flex flex-col justify-center lg:flex-row items-center p-4 "
+        className="flex flex-col justify-center lg:flex-row items-center p-4 bg-teal-500 "
       >
         <label htmlFor="reservation_date">
-          <h2 id="header-text" className="text-4xl sm:text-4xl m-1 font-bold">
+          <h1
+            id="header-text"
+            className="text-4xl sm:text-4xl m-1 font-bold text-white"
+          >
             Current Date:
-          </h2>
+          </h1>
         </label>
         <input
-          className="text-2xl md:text-2xl font-bold border-2 border-teal-500 rounded-3xl p-2 m-2 mx-4"
+          className="text-2xl md:text-2xl font-bold text-teal-700 border-2 border-teal-500 rounded-3xl p-2 m-2 mx-4"
           type="date"
           pattern="\d{4}-\d{2}-\d{2}"
           name="reservation_date"
@@ -109,7 +112,7 @@ function Dashboard() {
       >
         <ErrorAlert error={error} />
         <Reservations reservations={reservations} />
-        <h2 className="font-bold text-center text-3xl md:text-5xl m-4">
+        <h2 className="font-bold text-center text-teal-700 text-3xl md:text-5xl m-4">
           TABLES
         </h2>
         <TableList tables={tables} />

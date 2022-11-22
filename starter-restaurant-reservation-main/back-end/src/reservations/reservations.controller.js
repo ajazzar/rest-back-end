@@ -1,7 +1,7 @@
 const service = require("./reservations.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 const hasProperties = require("../errors/hasProperties");
-var isSameOrBefore = require("dayjs/plugin/isSameOrBefore");
+
 const hasRequiredProperties = hasProperties(
   "first_name",
   "last_name",
@@ -124,23 +124,17 @@ function hasValidDate(req, res, next) {
   const trimmedDate = reservation_date.substring(0, 10);
   const dateInput = dayjs(trimmedDate + " " + reservation_time); // UTC
 
-  //const date = new Date().toISOString();
-  const date = new Date();
-
-  let day2 = date.getDate();
-  let month = date.getMonth() + 1;
-  let year = date.getFullYear();
-
-  // This arrangement can be altered based on how we want the date's format to appear.
-  let currentDate = `${month}-${day2}-${year}`;
-  var date1 = new Date(currentDate);
-  var date2 = new Date(`${reservation_date}`);
-  var diffDays = date2.getDate() - date1.getDate();
   const day = dayjs(dateInput).day();
+  let date1 = new Date(reservation_date).getTime();
 
-  // console.log(dateInput);
-  // console.log(today);
-  // console.log(day);
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, "0");
+  var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  var yyyy = today.getFullYear();
+
+  today = yyyy + "/" + mm + "/" + dd;
+  const x = new Date(trimmedDate);
+  const y = new Date(today);
 
   const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {
@@ -164,13 +158,15 @@ function hasValidDate(req, res, next) {
   if (res.locals.reservation) {
     return next();
   }
-  if (diffDays < 0) {
+  if (x < y) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
     });
   }
-  next();
+  if (x > y) {
+    next();
+  }
 }
 
 function hasValidTime(req, res, next) {
@@ -303,7 +299,6 @@ module.exports = {
     checkBookedStatus,
     hasValidDate,
     hasValidTime,
-    hasValidPhone,
     hasValidPeople,
     asyncErrorBoundary(update),
   ],
