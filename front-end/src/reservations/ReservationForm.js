@@ -1,5 +1,5 @@
 import React from "react";
-
+const dayjs = require("dayjs");
 export default function ReservationForm({
   handleSubmit,
   handleNumber,
@@ -9,6 +9,7 @@ export default function ReservationForm({
   id,
 }) {
   const date = `${formData.reservation_date}`.substring(0, 10);
+  const today = dayjs();
   return (
     <div className="p-2">
       <form
@@ -75,6 +76,7 @@ export default function ReservationForm({
             id="reservation_time"
             name="reservation_time"
             value={formData.reservation_time}
+            min={today}
             onChange={handleChange}
             required
           />
