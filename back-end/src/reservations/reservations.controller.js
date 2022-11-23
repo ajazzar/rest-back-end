@@ -148,7 +148,7 @@ function hasValidDate(req, res, next) {
   if (res.locals.reservation) {
     return next();
   }
-  if (todayDate < trimmedDate) {
+  if (todayDate > trimmedDate) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
