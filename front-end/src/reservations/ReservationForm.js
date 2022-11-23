@@ -66,6 +66,7 @@ export default function ReservationForm({
             id="reservation_date"
             name="reservation_date"
             value={date}
+            min={today}
             onChange={handleChange}
             required
           />
