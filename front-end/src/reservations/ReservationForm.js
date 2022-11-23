@@ -1,5 +1,5 @@
 import React from "react";
-const dayjs = require("dayjs");
+
 export default function ReservationForm({
   handleSubmit,
   handleNumber,
