@@ -191,14 +191,21 @@ function hasValidTime(req, res, next) {
 }
 function hasValidPhone(req, res, next) {
   const { mobile_number } = req.body.data;
-  const patternPhone = "[0-9]{3}-[0-9]{3}-[0-9]{4}";
+  const patternPhone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if (!mobile_number || mobile_number === "undefined") {
+    return next({
+      status: 400,
+      message: `mobile_phone is missing`,
+    });
+  }
   if (!mobile_number.match(patternPhone)) {
     return next({
       status: 400,
       message: `mobile_phone is invalid`,
     });
+  } else {
+    return next();
   }
-  next();
 }
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
