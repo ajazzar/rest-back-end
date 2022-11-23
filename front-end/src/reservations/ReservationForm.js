@@ -9,9 +9,10 @@ export default function ReservationForm({
   id,
 }) {
   const date = `${formData.reservation_date}`.substring(0, 10);
-  // const todayDate = new Date().toISOString.split("T")[0];
+  // const todayDate = new Date().toISOString.substring(0, 10);
   // const todayTime = new Date().toISOString.split("T")[1];
-  const today = dayjs({});
+  const today = dayjs().format("YYYY-MM-DD");
+
   console.log(today);
   return (
     <div className="p-2">
@@ -54,7 +55,7 @@ export default function ReservationForm({
             name="mobile_number"
             placeholder="123-456-7890"
             value={formData.mobile_number}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            pattern={"[0-9]{3}-[0-9]{3}-[0-9]{4}"}
             onChange={handleChange}
             required
           />
