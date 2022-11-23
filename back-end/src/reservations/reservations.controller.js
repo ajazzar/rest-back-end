@@ -125,7 +125,9 @@ function hasValidDate(req, res, next) {
   const today = dayjs().format("YYYY-MM-DD");
   const dateInput2 = dayjs(dateInput).format("YYYY-MM-DD");
   const day = dayjs(dateInput).day();
-
+  const date1 = new Date(today);
+  const date2 = new Date(dateInput2);
+  console.log(date1, date2);
   const dateFormat = /\d\d\d\d-\d\d-\d\d/;
   if (!reservation_date) {
     return next({
@@ -145,16 +147,15 @@ function hasValidDate(req, res, next) {
       message: `The restaurant is closed on Tuesday.`,
     });
   }
-  if (res.locals.reservation) {
-    return next();
-  }
-  if (dateInput2 < today) {
+
+  if (date2.getTime() < date1.getTime()) {
     return next({
       status: 400,
       message: `Reservations can't be in the past. Please pick a future date.`,
     });
+  } else {
+    return next();
   }
-  next();
 }
 
 function hasValidTime(req, res, next) {
