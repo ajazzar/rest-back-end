@@ -188,17 +188,17 @@ function hasValidTime(req, res, next) {
   }
   next();
 }
-function hasValidPhone(req, res, next) {
-  const { mobile_number } = req.body.data;
-  const patternPhone = /\d\d\d-\d\d\d-\d\d\d\d/;
-  if (!mobile_number.match(patternPhone)) {
-    return next({
-      status: 400,
-      message: `mobile_phone is invalid`,
-    });
-  }
-  next();
-}
+// function hasValidPhone(req, res, next) {
+//   const { mobile_number } = req.body.data;
+//   const patternPhone = /\d\d\d-\d\d\d-\d\d\d\d/;
+//   if (!mobile_number.match(patternPhone)) {
+//     return next({
+//       status: 400,
+//       message: `mobile_phone is invalid`,
+//     });
+//   }
+//   next();
+// }
 function hasValidStatus(req, res, next) {
   const { status } = req.body.data;
   const statuses = ["booked", "seated", "finished", "cancelled"];
@@ -261,7 +261,7 @@ module.exports = {
     checkBookedStatus,
     hasValidDate,
     hasValidTime,
-    hasValidPhone,
+    // hasValidPhone,
     hasValidPeople,
     asyncErrorBoundary(create),
   ],
@@ -278,7 +278,7 @@ module.exports = {
     checkBookedStatus,
     hasValidDate,
     hasValidTime,
-    hasValidPhone,
+    // hasValidPhone,
     hasValidPeople,
     asyncErrorBoundary(update),
   ],
