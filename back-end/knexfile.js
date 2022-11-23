@@ -8,10 +8,10 @@ require("dotenv").config();
 const path = require("path");
 
 const {
-  DATABASE_URL = "postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj",
-  DATABASE_URL_DEVELOPMENT = "postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj",
-  DATABASE_URL_TEST = "postgres://daxkjxcn:VRUQxxzYQqB8y7qMPUXOE4DP8VcWQvgk@jelani.db.elephantsql.com/daxkjxcn",
-  DATABASE_URL_PREVIEW = "postgres://tnctjyis:F2e2T-fi_XnwcSlTwLiNhzIyOa0fR-pa@jelani.db.elephantsql.com/tnctjyis",
+  DATABASE_URL = "postgresql://postgres@localhost/postgres",
+  DATABASE_URL_DEVELOPMENT = "postgresql://postgres@localhost/postgres",
+  DATABASE_URL_TEST = "postgresql://postgres@localhost/postgres",
+  DATABASE_URL_PREVIEW = "postgresql://postgres@localhost/postgres",
   DEBUG,
 } = process.env;
 
@@ -30,7 +30,7 @@ module.exports = {
   },
   test: {
     client: "postgresql",
-    pool: { min: 1, max: 50 },
+    pool: { min: 1, max: 5 },
     connection: DATABASE_URL_TEST,
     migrations: {
       directory: path.join(__dirname, "src", "db", "migrations"),
@@ -42,7 +42,7 @@ module.exports = {
   },
   preview: {
     client: "postgresql",
-    pool: { min: 1, max: 50 },
+    pool: { min: 1, max: 5 },
     connection: DATABASE_URL_PREVIEW,
     migrations: {
       directory: path.join(__dirname, "src", "db", "migrations"),
@@ -54,7 +54,7 @@ module.exports = {
   },
   production: {
     client: "postgresql",
-    pool: { min: 1, max: 50 },
+    pool: { min: 1, max: 5 },
     connection: DATABASE_URL,
     migrations: {
       directory: path.join(__dirname, "src", "db", "migrations"),
