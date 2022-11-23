@@ -190,7 +190,7 @@ function hasValidTime(req, res, next) {
 }
 function hasValidPhone(req, res, next) {
   const { mobile_number } = req.body.data;
-  const patternPhone = 1234567890;
+  const patternPhone = "123-456-7890";
   if (!mobile_number.match(patternPhone)) {
     return next({
       status: 400,
