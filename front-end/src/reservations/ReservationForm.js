@@ -9,8 +9,7 @@ export default function ReservationForm({
   id,
 }) {
   const date = `${formData.reservation_date}`.substring(0, 10);
-  // const todayDate = new Date().toISOString.substring(0, 10);
-  // const todayTime = new Date().toISOString.split("T")[1];
+
   const today = dayjs().format("YYYY-MM-DD");
 
   console.log(today);
