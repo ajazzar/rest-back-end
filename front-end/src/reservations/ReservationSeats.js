@@ -49,7 +49,7 @@ export default function ReservationSeats() {
     >
       <div className="h-screen px-8">
         <ErrorAlert error={error} />
-        <h2 className="font-bold text-center text-4xl sm:text-5xl mx-2 p-3">
+        <h2 className="font-bold text-center text-teal-700 text-4xl sm:text-5xl mx-2 p-3">
           Seat a Reservation
         </h2>
         <div className="mx-auto sm:w-8/12 my-6 leading-10 bg-teal-500 text-black text-center drop-shadow-3xl p-4 rounded-3xl">
@@ -76,13 +76,13 @@ export default function ReservationSeats() {
             )}
             <div>
               <button
-                className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black font-bold py-1 px-3 rounded-full mx-3"
+                className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3"
                 type="submit"
               >
                 Submit
               </button>
               <button
-                className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black font-bold py-1 px-3 rounded-full mx-3"
+                className="focus:outline-none bg-gray-100 hover:bg-teal-600 hover:text-black text-teal-700 font-bold py-1 px-3 rounded-full mx-3"
                 onClick={history.goBack}
               >
                 Cancel

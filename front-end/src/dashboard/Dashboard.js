@@ -69,7 +69,7 @@ function Dashboard() {
         <label htmlFor="reservation_date">
           <h1
             id="header-text"
-            className="text-4xl sm:text-4xl m-1 font-bold text-white"
+            className="text-4xl sm:text-4xl m-1 font-bold text-black"
           >
             Current Date:
           </h1>
