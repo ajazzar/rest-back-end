@@ -350,7 +350,7 @@ so that I can quickly access a customer's reservation when they call about their
 
 #### Acceptance Criteria
 
-1. The `/search` page will
+1. The `/search` page will:
    - Display a search box `<input name="mobile_number" />` that displays the placeholder text: "Enter a customer's phone number"
    - Display a "Find" button next to the search box.
    - Clicking on the "Find" button will submit a request to the server (e.g. GET `/reservations?mobile_number=800-555-1212`).
