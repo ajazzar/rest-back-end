@@ -4,7 +4,6 @@ on: [push, pull_request]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     services:
@@ -21,7 +20,6 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-
     strategy:
       matrix:
         node-version: [14.x]
@@ -46,7 +44,6 @@ jobs:
             ${{ runner.os }}-test-${{ env.cache-name }}-
             ${{ runner.os }}-test-
             ${{ runner.os }}-
-
       - name: npm install
         if: steps.frontend-node-cache.outputs.cache-hit != 'true'
         run: npm install
@@ -66,7 +63,6 @@ jobs:
           name: screenshots
           path: |
             front-end/.screenshots
-
       - name: Test backend
         if: always()
         run: npm run test:backend
