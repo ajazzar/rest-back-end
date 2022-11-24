@@ -6,7 +6,6 @@ export default function ReservationForm({
   handleChange,
   formData,
   history,
-  id,
 }) {
   const date = `${formData.reservation_date}`.substring(0, 10);
 

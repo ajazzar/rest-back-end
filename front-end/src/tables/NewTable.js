@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ErrorAlert from "../layout/ErrorAlert";
 import { useHistory } from "react-router";
 import { createTable } from "../utils/api";
-import cooking from "../images/tables-bg.jpg";
+import tables from "../images/tables-bg.jpg";
 
 export default function NewTable() {
   const initialFormState = {
@@ -40,7 +40,7 @@ export default function NewTable() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${cooking})` }}
+      style={{ backgroundImage: `url(${tables})` }}
       className="w-full h-screen bg-no-repeat bg-cover bg-top"
     >
       <h2 className="font-bold text-teal-700 text-center text-3xl sm:text-5xl mx-2 p-3">

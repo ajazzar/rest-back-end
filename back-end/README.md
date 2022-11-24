@@ -4,4 +4,4 @@ This starter code for the backend of the capstone project in the Thinkful curric
 
 See [../README.md](../README.md) for an overview of this Application.
 
-See [../front-end/README.md](../front-end/README.md) for information about the User Stories and the Folder/File paths.
+See [../front-end/README.md](../front-end/README.md) for information about the User Stories and some Folder/File paths.
