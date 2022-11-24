@@ -4,7 +4,7 @@ Final Capstone by Aaron Jazzar
 
 ## Links
 
-* Deployed App: [Periodic Tables]( https://restaurant-reservations-seven.vercel.app/dashboard)
+* Deployed App: [Periodic Tables]( https://restaurant-reservations-qe9a-aaron1350.vercel.app/)
   
 ## Documentation of API
 
@@ -20,12 +20,6 @@ Final Capstone by Aaron Jazzar
 | /tables                | POST    |          creates a new table|
 | /tables/:table_id/seat    | PUT     |      moves reservation to a table for a given id|
 | /tables/:table_id/seat  | DELETE  |  remove a reservation from a table for a given id|
-
-## Tests
-
-![front-end tests](/images/front-end.png)
-
-![back-end tests](/images/back-end.png)
 
 ## Dashboard
 
