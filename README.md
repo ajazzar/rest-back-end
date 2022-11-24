@@ -1,6 +1,6 @@
 # Periodic Tables
 
-Final Capstone by Aaron Jazzar
+Final Capstone - Aaron Jazzar
 
 ## Links
 
