@@ -4,6 +4,7 @@ on: [push, pull_request]
 
 jobs:
   test:
+
     runs-on: ubuntu-latest
 
     services:
@@ -42,6 +43,32 @@ jobs:
           key: ${{ runner.os }}-test-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-test-${{ env.cache-name }}-
+            ${{ runner.os }}-test-
+            ${{ runner.os }}-
+      - name: npm install
+        if: steps.frontend-node-cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - run: npm run build --if-present
+
+      - name: Test frontend
+        run: npm run test:frontend
+        env:
+          DATABASE_URL_TEST: postgresql://postgres:postgres@127.0.0.1:5432
+          NODE_ENV: test
+
+      - name: Archive screenshots
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: screenshots
+          path: |
+            front-end/.screenshots
+      - name: Test backend
+        if: always()
+        run: npm run test:backend
+        env:
+          DATABASE_URL_TEST: postgresql://postgres:postgres@127.0.0.1:5432
             ${{ runner.os }}-test-
             ${{ runner.os }}-
       - name: npm install
