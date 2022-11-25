@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ErrorAlert from "../layout/ErrorAlert";
 import Reservations from "../reservations/Reservations";
 import { listReservations } from "../utils/api";
-import cooking from "../images/cooking-bg.jpg";
+import tables from "../images/tables-bg.jpg";
 
 export default function Search() {
   const [reservations, setReservations] = useState([]);
@@ -34,7 +34,7 @@ export default function Search() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${cooking})` }}
+      style={{ backgroundImage: `url(${tables})` }}
       className="w-full min-h-screen sm:h-full bg-no-repeat bg-cover bg-top"
     >
       <div className="text-center p-4">
