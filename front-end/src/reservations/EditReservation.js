@@ -3,7 +3,7 @@ import { readReservation, updateReservation } from "../utils/api";
 import { useParams, useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 import ReservationForm from "./ReservationForm";
-import cooking from "../images/cooking-bg.jpg";
+import tables from "../images/tables-bg.jpg";
 const dayjs = require("dayjs");
 
 export default function EditReservation() {
@@ -73,7 +73,7 @@ export default function EditReservation() {
 
   return (
     <div
-      style={{ backgroundImage: `url(${cooking})` }}
+      style={{ backgroundImage: `url(${tables})` }}
       className="w-full h-full min-h-screen bg-no-repeat bg-cover bg-top"
     >
       <h2 className="font-bold text-teal-700 text-center text-3xl md:text-5xl mx-2 p-3">
