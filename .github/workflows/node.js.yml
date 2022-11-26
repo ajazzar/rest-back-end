@@ -1,7 +1,6 @@
 name: Capstone CI
 
 on: [push, pull_request]
-
 jobs:
   test:
 
