@@ -13,9 +13,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: daxkjxcn
-          POSTGRES_PASSWORD: VRUQxxzYQqB8y7qMPUXOE4DP8VcWQvgk
-          POSTGRES_DB: daxkjxcn
+          POSTGRES_USER: zqvgpmei
+          POSTGRES_PASSWORD: KIdOhA5imYhfpXZQQWOyWlZ7KQ7fI0hD
+          POSTGRES_DB: zqvgpmei
         options: 
           --health-cmd pg_isready
           --health-interval 10s
@@ -54,7 +54,7 @@ jobs:
       - name: Test frontend
         run: npm test --prefix ./front-end
         env:
-          DATABASE_URL_TEST: postgres://daxkjxcn:VRUQxxzYQqB8y7qMPUXOE4DP8VcWQvgk@jelani.db.elephantsql.com/daxkjxcn
+          DATABASE_URL_TEST: postgres://zqvgpmei:KIdOhA5imYhfpXZQQWOyWlZ7KQ7fI0hD@jelani.db.elephantsql.com/zqvgpmei
           NODE_ENV: test
 
       - name: Archive screenshots
@@ -68,5 +68,5 @@ jobs:
         if: always()
         run: npm test --prefix ./back-end
         env:
-          DATABASE_URL_TEST: postgres://daxkjxcn:VRUQxxzYQqB8y7qMPUXOE4DP8VcWQvgk@jelani.db.elephantsql.com/daxkjxcn
+          DATABASE_URL_TEST: postgres://zqvgpmei:KIdOhA5imYhfpXZQQWOyWlZ7KQ7fI0hD@jelani.db.elephantsql.com/zqvgpmei
           NODE_ENV: test
