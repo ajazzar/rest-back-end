@@ -48,7 +48,7 @@ jobs:
         if: steps.frontend-node-cache.outputs.cache-hit != 'true'
         run: npm install
 
-      - run: npm -prefix front-end run build
+      - run: npm run test --if-present
 
       - name: Test frontend
         run: npm test --prefix ./front-end
