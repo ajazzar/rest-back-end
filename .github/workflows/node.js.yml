@@ -53,7 +53,7 @@ jobs:
       - name: Test frontend
         run: npm test --prefix ./front-end
         env:
-          DATABASE_URL_TEST: postgres://zqvgpmei:KIdOhA5imYhfpXZQQWOyWlZ7KQ7fI0hD@jelani.db.elephantsql.com/zqvgpmei
+          DATABASE_URL_TEST: postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj
           NODE_ENV: test
 
       - name: Archive screenshots
@@ -67,5 +67,5 @@ jobs:
         if: always()
         run: npm test --prefix ./back-end
         env:
-          DATABASE_URL_TEST: postgres://zqvgpmei:KIdOhA5imYhfpXZQQWOyWlZ7KQ7fI0hD@jelani.db.elephantsql.com/zqvgpmei
+          DATABASE_URL_TEST: postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj
           NODE_ENV: test
