@@ -51,7 +51,7 @@ jobs:
 
       - run: npm -prefix front-end run build --if-present
 
-      - name: Test frontend
+      - name: Tes frontend
         run: npm test --prefix ./front-end
         env:
           DATABASE_URL_TEST: postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj
