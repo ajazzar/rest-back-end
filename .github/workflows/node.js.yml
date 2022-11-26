@@ -12,9 +12,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: tnctjyis
-          POSTGRES_PASSWORD: F2e2T-fi_XnwcSlTwLiNhzIyOa0fR-pa
-          POSTGRES_DB: tnctjyis
+          POSTGRES_USER: qvxtcbuj
+          POSTGRES_PASSWORD: AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA
+          POSTGRES_DB: qvxtcbuj
         options: 
           --health-cmd pg_isready
           --health-interval 10s
