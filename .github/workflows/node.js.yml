@@ -12,9 +12,9 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: qvxtcbuj
-          POSTGRES_PASSWORD: AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA
-          POSTGRES_DB: qvxtcbuj
+          POSTGRES_USER: daxkjxcn
+          POSTGRES_PASSWORD: VRUQxxzYQqB8y7qMPUXOE4DP8VcWQvgk
+          POSTGRES_DB: daxkjxcn
         options: 
           --health-cmd pg_isready
           --health-interval 10s
