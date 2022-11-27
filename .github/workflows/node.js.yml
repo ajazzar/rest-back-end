@@ -52,7 +52,7 @@ jobs:
       - run: npm run build
 
       - name: Test frontend
-        run: npm run test --prefix ./front-end
+        run: npm run test:frontend
         env:
           DATABASE_URL_TEST: postgresql://postgres:postgres@127.0.0.1:5432
           NODE_ENV: test
@@ -66,7 +66,7 @@ jobs:
             front-end/.screenshots
       - name: Test backend
         if: always()
-        run: npm run test --prefix ./back-end
+        run: npm run test:backend
         env:
           DATABASE_URL_TEST: postgresql://postgres:postgres@127.0.0.1:5432
           NODE_ENV: test
