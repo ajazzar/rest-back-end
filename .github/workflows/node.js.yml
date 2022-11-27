@@ -54,7 +54,7 @@ jobs:
       - name: Test frontend
         run: npm run test:frontend
         env:
-          DATABASE_URL_TEST: postgresql://postgres:postgres@127.0.0.1:5432
+          DATABASE_URL_TEST: postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj
           NODE_ENV: test
 
       - name: Archive screenshots
