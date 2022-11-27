@@ -52,7 +52,7 @@ jobs:
       - run: npm run build --if-present
 
       - name: Test frontend
-        run: npm run test:front-end
+        run: npm run test:frontend
         env:
           DATABASE_URL_TEST: postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj
           NODE_ENV: test
