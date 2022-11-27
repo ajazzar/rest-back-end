@@ -1,4 +1,5 @@
 name: Capstone CI
+
 on: [push, pull_request]
 
 jobs:
@@ -12,10 +13,10 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: qvxtcbuj
-          POSTGRES_PASSWORD: AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA
-          POSTGRES_DB: qvxtcbuj
-        options: 
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
@@ -48,12 +49,12 @@ jobs:
         if: steps.frontend-node-cache.outputs.cache-hit != 'true'
         run: npm install
 
-      - run: npm run build 
+      - run: npm run build --if-present
 
       - name: Test frontend
-        run: npm test --prefix ./front-end
+        run: npm run test:frontend
         env:
-          DATABASE_URL_TEST: postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj
+          DATABASE_URL_TEST: postgresql://postgres:postgres@127.0.0.1:5432
           NODE_ENV: test
 
       - name: Archive screenshots
@@ -65,7 +66,7 @@ jobs:
             front-end/.screenshots
       - name: Test backend
         if: always()
-        run: npm test --prefix ./back-end
+        run: npm run test:backend
         env:
-          DATABASE_URL_TEST: postgres://qvxtcbuj:AJUc5Kd8dPv5-oJqR1zMKwKPOmZK6hrA@jelani.db.elephantsql.com/qvxtcbuj
+          DATABASE_URL_TEST: postgresql://postgres:postgres@127.0.0.1:5432
           NODE_ENV: test
