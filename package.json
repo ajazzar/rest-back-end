@@ -14,7 +14,7 @@
     "build": "npm -prefix front-end run build",
     "preinstall": "cd ./back-end && npm install",
     "install": "cd ./front-end && npm install",
-    "start": "npx concurrently 'npm run start:backend' 'npm run start:frontend'",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
     "start:backend": "npm --prefix ./back-end start",
     "start:frontend": "npm --prefix ./front-end start",
     "start:dev": "npx concurrently \"npm run start:dev --prefix ./back-end\" \"npm start --prefix ./front-end\" ",
@@ -52,6 +52,7 @@
   "author": "Thinkful, Inc.",
   "license": "UNLICENSED",
   "dependencies": {
+    "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.6",
     "knex": "^2.3.0",
@@ -59,6 +60,7 @@
     "npm-run-all": "^4.1.5",
     "npx": "^10.2.2",
     "pg": "^8.8.0",
+    "run-script": "^0.1.1",
     "ubuntu": "^2.0.0",
     "yaml": "^2.1.3"
   }

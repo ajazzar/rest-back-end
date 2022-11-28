@@ -4,7 +4,7 @@ Final Capstone - Aaron Jazzar
 
 ## Links
 
-* Deployed App: [Periodic Tables]( https://restaurant-reservations-qe9a-aaron1350.vercel.app/)
+* Deployed App: [Periodic Tables]( https://restaurant-reservations-qe9a2-hazel.vercel.app/dashboard)
   
 ## Documentation of API
 
